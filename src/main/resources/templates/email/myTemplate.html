@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:remove="all">Order Confirmation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+p {
+	color: navy;
+}
+
+li {
+	color: blue;
+}
+</style>
+</head>
+<body>
+	<div align="center">
+		<img src="pulpitrock.jpg" th:src="'cid:' + ${imageResourceName}"
+			height="150" width="100%" />
+	</div>
+	<div>
+		<p th:text="'Dear '+ ${Content.username}+','">Name</p>
+		<p th:text="${Content.message}"></p>
+		<p>This application developed using :</p>
+		<ol>
+			<li th:text="${Content.technology[0]}"></li>
+			<li th:text="${Content.technology[1]}"></li>
+			<li>Template Engine</li>
+		</ol>
+		<p>Regards,</p>
+		<p style="font-weight: bold;">Basant Hota</p>
+	</div>
+</body>
+</html>
